@@ -1,0 +1,146 @@
+%   Copyright (C) 2014  School of Information Sciences, Manipal
+
+
+
+\newcommand{\projecttitle}{Boot-Time Optimization for Android on Intel Atom Architecture}
+\newcommand{\projectauthors}{\normalsize Aurabindo J (141021001)}
+
+\documentclass{mainreport}
+\linespread{1.5}
+\usepackage{hyperref}
+\usepackage{makeidx}
+\usepackage{multirow}
+\usepackage{nomencl}
+\usepackage{pdfpages}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{upquote}
+%\usepackage{biblatex}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+%\usepackage{tocloft}
+
+
+\newcommand{\tab}{\hspace*{2em}}
+% for removing dots
+
+\makeatletter
+\renewcommand{\@dotsep}{10000} 
+\makeatother
+
+\renewcommand{\figurename}{Fig.}
+
+
+\begin{document}
+
+\maketitle
+%\makecertificate
+
+\parindent 10mm
+%\newgeometry{bottom=2.5cm,top=2.5cm}
+\chapter*{Acknowledgment}\label{ack}\addcontentsline{toc}{chapter}{Acknowledgment}
+{\label{ack} 
+
+%\paragraph*{•}
+\hspace{6mm} This project itself is an acknowledgment to the inspiration, drive and technical
+assistance contributed by many individuals. I would like to express my heartfelt thanks to my project guide {\bf Dr. S. Arockiaraj}. We also like to express our gratitude towards {\bf Dr. B. Dinesh Rao}.
+%\paragraph*{•}
+I would like to thank {\bf School of Information Science}, in particular, for providing us with an ample environment and
+infrastructure required to carry out this project. I take this opportunity to thank
+the {\bf Dr. Harishchandra Hebbar}, as the director of the School of Information Sciences, for the inspiration and support rendered.
+
+%\paragraph*{•}
+I extend my heartfelt thanks to my parents, friends and well wishers for their support and timely help. Above all I thank the Almighty for His blessing and providing mercies at all stages of my work. \\[2cm]
+
+
+
+
+\noindent Manipal \hfill Project Members
+
+\noindent \today \hfill School of Information Sciences
+
+ \hfill Manipal
+
+
+
+
+
+}
+
+\chapter*{Abstract}\label{Abstract}\addcontentsline{toc}{chapter}{Abstract}
+
+{
+\label{Abstract}
+
+
+
+%\paragraph*{•}
+\hspace{6mm} Modern encryption systems are very advanced and are practically impossible to break them by using a brute force attack in a time bound manner. This project aims at exploiting the validity of the message data and then encrypt it using a key. The key length depends on the validity duration of the data. Data that is important and has longer validity will be encrypted using a longer key, and the data which has shorter validity is encrypted using a shorter key. Point being that at any given point, the time taken to decipher the content is greater than the validity period of the data. If it will be invalid for an attacker after say, 1 minute, then encoding that data with a very large key is a penalty as the attacker cannot break it in that short time. So we use a smaller key length to encrypt it. The advantage is better encryption throughput without compromising security.
+%\end{center}
+}
+
+%generate table of contents
+\tableofcontents
+
+%\chapter*{List of Symbols}\label{symbol}\addcontentsline{toc}{chapter}{List of Symbols}
+%\listofsymbols
+
+%\input{symbol}
+
+%\input{fig}
+
+\addcontentsline{toc}{chapter}{List of Figures}
+
+
+
+\listoffigures
+%\listoftables
+\addtocontents{lof}{\textbf{No.}\hspace{8 mm}\textbf{Figure}~\hfill\textbf{Page}\par}
+%\newpage
+
+
+\chapter*{List of Abbreviations}\label{abbrv}\addcontentsline{toc}{chapter}{List of Abbreviations}
+
+\input{abbreviation}
+
+%\chapter*{Report}\label{report}\addcontentsline{toc}{chapter}{Report}
+
+\pagenumbering{arabic}
+
+
+
+\input{introduction}
+
+%\chapter*{Datasheets}\label{datasheet}\addcontentsline{toc}{chapter}{Datasheets}
+
+%{\label{nexys3}\includepdf[pages={-}]{Nexys3_rm.pdf} 
+%{\label{nexys3}\includepdf[pages={1-1,8-10,11-14,18-20}]{Nexys3_rm.pdf} 
+%{\label{nexys3}\includepdf[pages={1-1}]{spartan6.pdf} 
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{master}
+
+\end{document}

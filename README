@@ -1,0 +1,17 @@
+
+Thesis report for MSc. Tech degree from School of Information Science, Manipal University
+
+#Usage
+
+Install latex suite and run:
+
+```
+make
+```
+This will compile the latex source, create PDF output and open the resulting file in evince document viewer.
+To clean:
+
+```
+make clean
+```
+

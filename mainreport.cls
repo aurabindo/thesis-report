@@ -121,116 +121,55 @@
   \makeatother
 
   
-  
-\def\maketitle{%
-	\begin{titlepage}
-	\thispagestyle{empty}
-	\vspace*{0.5cm}
-	{\centering     
-	
-	{\rm \Huge  \linespread{2.0} \bf \MakeTextUppercase \projecttitle}\\
-	
-	%Title must be in capital letters
-	%Adjust space here if the title goes to more than one line
-	
-	\vspace{1cm}
-	\begin{figure}[ht] 
-	{\centering {\includegraphics[scale=.5]{manipal.jpg}}\par}
-	\end{figure}
-	\vspace{.5cm}
-	\bf \Large{M.Sc. Tech\\ Project Report - 2015}\\
-	\vspace{.2cm}
-	Submitted By \\
-	%\vspace{.5cm}
-	\rm
-	\projectauthors\\
-
-	\vspace{.5cm}
-	%{{Guided By}} \\
-	%\vspace{.5cm}
-	 %\hspace{.05cm} 
-	 %{\normalsize \bf {guide-name}}\\
-	 %{\normalsize \bf {designation}}\\
-	%\vspace{2cm}
-	{\bf \normal School of Information Sciences, Manipal \\ }
-	} 
-	\pagebreak
-	\end{titlepage}
-}
-
-\def\makecertificate{%
-	\thispagestyle{empty}
-	\vspace*{0.2cm}
-	{\centering     
-	{\bf \Large School of Information Sciences, Manipal \\}
-	\vspace*{0.2cm}
-		
-		{\centering {\includegraphics[scale=.4]{cd.png}}\par}
-	
-	
-	\begin{Large}
-		 \huge Certificate\\
-	\end{Large}
-	
-	%\vspace*{0.5cm}
-	Certified that this is a bonafide report of the project report titled \\
-	{\bf \projecttitle \\}
-	Presented by \\
-	
-	\vspace{.1cm}
-	\rm
-	\projectauthors \\
-	}
-	%\vspace*{0.5cm}
-	{ \linespread{1} Of the Third Semester, Embedded Systems in partial fulfillment of the requirement for the award of the Degree of Master of Science and Technology in Embedded Systems under the Manipal University in the year 2015 \\}
-	\vspace*{.1cm}\\
-	\noindent
-	
-	Guided by \hfill Director\\
-	Dr. S. Arockiaraj \hfill Dr. Harishchandra Hebbar\\
-        SOIS \hfill SOIS \\
-	
-	%\noindent
-	Date: \\
-	Place: \\
-	
-	\pagebreak
-}
-
 
 \def\maketitle{%
 	\begin{titlepage}
 	\thispagestyle{empty}
-	\vspace*{0.5cm}
 	{\centering     
 	
 	{\rm \Large  \linespread{1.5} \bf \MakeTextUppercase \projecttitle}\\
 	
 	%Title must be in capital letters
 	%Adjust space here if the title goes to more than one line
+	\vspace*{0.3cm}
+	{\centering	Thesis submitted in partial fulfillment of the requirements for the degree of\\}
 	
-	\vspace{.7cm}
-	\begin{figure}[ht] 
-	{\centering {\includegraphics[scale=.5]{manipal.jpg}}\par}
-	\end{figure}
 	%\vspace{.3cm}
-	\bf \Large{M.Sc. Tech\\ Project Report - 2015}\\
-	\vspace{1cm}
-	Submitted By \\
-	\vspace{.5cm}
+	\vspace*{0.3cm}
+
+	{\bf \centering	Master of Science in Technology\\}
+	{\bf \centering	M.Sc. Tech (Branch of M.Sc. Tech Program)\\}
+	\vspace*{0.3cm}
+
+	%\bf \Large{M.Sc. Tech\\ Project Report - 2015}\\
+	{Submitted by\\}
+	\vspace{.3cm}
 	\rm
 	%{\bf \MakeTextUppercase \projectauthors \\}
-	{\bf \normalsize Aurabindo J \#141021001\\}
-	{\bf \normalsize Piyush Itankar \#141021003\\}
-	{\bf \normalsize Namrata Singh \#141021049 \\}
-	\vspace{1.5cm}
+	{\bf \normalsize Aurabindo J\\}
+	{\normalsize \#141021003\\}
+	\vspace{1cm}
+	{\centering Under the guidance of,\\}
+	\vspace{1cm}
+
+	\noindent	{\bf External Guide} \hfill {\bf Internal Guide\\}
+	Mr. Satish A Hipparagi \hfill Dr. Harishchandra Hebbar\\
+	{Engineering Manager} \hfill {Director\\}
+	Intel Corp. \hfill SOIS\\
+	Bengaluru \hfill Manipal University, Manipal \\
+
 	%{{Guided By}} \\
 	%\vspace{.5cm}
 	 %\hspace{.05cm} 
 	 %{\normalsize \bf {guide-name}}\\
 	 %{\normalsize \bf {designation}}\\
 	%\vspace{2cm}
-	{\bf \large{ School of Information Sciences, Manipal} \\}
+	\vspace{.3cm}
+	\begin{figure}[ht] 
+	{\centering {\includegraphics[scale=.4]{manipal.jpg}}\par}
+	\end{figure}
+	{\bf \large{ School of Information Sciences} \\}
+	{\large Manipal University, Manipal \\}
 	} 
 	\pagebreak
 	\end{titlepage}
@@ -238,38 +177,43 @@
 
 \def\makecertificate{%
 	\thispagestyle{empty}
-	\vspace*{0.2cm}
 	{\centering     
-	{\bf \Large School of Information Sciences, Manipal \\}
-	\vspace*{0.1cm}
+	{\bf \Large \MakeTextUppercase School of Information Sciences\\}
+	{\Large Manipal University, Manipal \\}
 		
-		{\centering {\includegraphics[scale=.4]{manipal.jpg}}\par}
-	
+		{\centering {\includegraphics[scale=.3]{manipal.jpg}}\par}
 	
 	\begin{Large}
 		 \Large \bf {CERTIFICATE\\}
 	\end{Large}
 	
-	%\vspace*{0.5cm}
-	Certified that this is a bonafide report of the Project Report titled \\
+	This is to certify that this thesis work titled\\
 	{\bf \MakeTextUppercase \projecttitle \\}
-	Done by \\
+	Is a bonafide record of the work done by \\
 	
-	%\vspace{.3cm}
 	\rm
 	%{\bf \MakeTextUppercase \projectauthors \\}
 	{\bf  \projectauthors \\}
 	}
 	%\vspace*{0.5cm}
-	{ \linespread{1} Of the Third Semester, Emebedded Systems in partial fulfillment of the requirement for the award of the Degree of Master of Sciences and Technology in Embedded Systems under the Manipal University in the year 2015 \\}
-	\vspace*{.2 cm}\\
+%	{ \linespread{1} Of the Third Semester, Emebedded Systems in partial fulfillment of the requirement for the award of the Degree of Master of Sciences and Technology in Embedded Systems under the Manipal University in the year 2015 \\}
+%	\vspace*{.2 cm}\\
 	\noindent
-	{\bf Guided By} \hfill {\bf Director\\}
-	Dr. S. Arockiaraj \hfill Dr. Harishchandra Hebbar\\
-	SOIS \hfill SOIS \\
+	In partial fulfillment of the requirements for the award of the degree of {\bf Master of
+	Science in Technology - M.Sc. Tech (Branch of M.Sc. Tech Program)} under
+	Manipal University, Manipal and the same has not been submitted elsewhere for
+	the award of any other degree.
+
+	\vspace{1cm}
+
+	\noindent	{\bf External Guide} \hfill {\bf Internal Guide\\}
+	Mr. Satish A Hipparagi \hfill Dr. Harishchandra Hebbar\\
+	{Engineering Manager} \hfill {Director\\}
+	Intel Corp. \hfill SOIS\\
+	Bengaluru \hfill Manipal University, Manipal \\
 	
-	\noindent Date: \\
-	Place:
+	{\centering Director,\\}
+	{\centering School of Information Science\\}
 }
 
 

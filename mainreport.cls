@@ -1,3 +1,27 @@
+%	Latex Template for Project/Thesis Report
+%
+%    Copyright (C) 2010  Govt. Engineering College, Thrissur
+%
+%		Jain Basil Aliyas <jainbasil@gmail.com>
+%
+%    Copyright (C) 2014-2016  School of Information Sciences, Manipal University, Manipal
+%
+%		Aurabindo J <mail@aurabindo.in>
+%		Sumana Bhat <sbsumana74@gmail.com>
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \ProvidesClass{mainreport}[]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
@@ -20,7 +44,10 @@
 \pagestyle{plain}
 \fancypagestyle{plain}{% 
 \fancyhf{} 
-\cfoot{\small{School of Information Sciences, Manipal}\\ {\thepage}} 
+\lfoot{\footnotesize{School of Information Sciences, Manipal}} 
+\rfoot{\thepage}
+\lhead{\footnotesize Boot-time Optimization for Android\\ on Intel Atom Architecture}
+\rhead{\footnotesize Aurabindo J}
 %\cfoot{\thepage} 
 \renewcommand{\headrulewidth}{0pt} 
 \renewcommand{\footrulewidth}{0pt} 
@@ -91,7 +118,7 @@
 \newcommand{\chhead}{\fontsize{14pt}{16.8pt}\selectfont \centerline}
 \makeatletter
 \def\@makechapterhead#1{%
-  \vspace*{50\p@}%
+  \vspace*{30\p@}%
   {\parindent \z@ \raggedright \normalfont
     %\ifnum \c@secnumdepth >\m@ne
     %    \huge\bfseries \@chapapp\space \thechapter
@@ -100,13 +127,13 @@
     %\fi
     \interlinepenalty\@M
     {\centering  \fontsize{14}{16.82} \selectfont  \bf \bfseries \thechapter .  \MakeTextUppercase{#1}\par\nobreak }
-    \vskip 40\p@
+    \vskip 25\p@
   }}
   
   \makeatother
 \makeatletter 
  \def\@makeschapterhead#1{%
-  \vspace*{50\p@}%
+  \vspace*{30\p@}%
   {\parindent \z@ \raggedright \normalfont
     %\ifnum \c@secnumdepth >\m@ne
     %    \huge\bfseries \@chapapp\space \thechapter
@@ -115,7 +142,7 @@
     %\fi
     \interlinepenalty\@M
     {\centering  \fontsize{14}{16.82} \selectfont  \bf \bfseries \MakeTextUppercase{#1}\par\nobreak }
-    \vskip 40\p@
+    \vskip 25\p@
   }}
   
   \makeatother

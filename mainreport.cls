@@ -28,7 +28,7 @@
 %\DeclareOption*{\PassOptionsToClass{\CurrentOption}{extreport}}
 \PassOptionsToClass{a4paper}{extreport}
 \ProcessOptions\relax
-\LoadClass[12pt,oneside]{report}
+\LoadClass[11pt,oneside]{report}
 %\LoadClass[12pt,oneside]{extreport}
 \RequirePackage{fancyhdr}
 \RequirePackage{amsmath}
@@ -38,13 +38,12 @@
 \RequirePackage{amsfonts}
 \RequirePackage{multicol}
 
-
 \RequirePackage[top=1.5in, bottom=1in, left=1.25in, right=1.25in]{geometry}
 \usepackage{fancyhdr}
 \pagestyle{plain}
 \fancypagestyle{plain}{% 
 \fancyhf{} 
-\lfoot{\footnotesize{School of Information Sciences, Manipal}} 
+\lfoot{\footnotesize{\institutename}} 
 \rfoot{\thepage}
 \lhead{\footnotesize Boot-time Optimization for Android\\ on Intel Atom Architecture}
 \rhead{\footnotesize Aurabindo J}
@@ -175,9 +174,9 @@
 	%{\bf \MakeTextUppercase \projectauthors \\}
 	{\bf \normalsize Aurabindo J\\}
 	{\normalsize \#141021003\\}
-	\vspace{1cm}
+	\vspace{.6cm}
 	{\centering Under the guidance of,\\}
-	\vspace{1cm}
+	\vspace{1.5cm}
 
 	\noindent	{\bf External Guide} \hfill {\bf Internal Guide\\}
 	Mr. Satish A Hipparagi \hfill Dr. Harishchandra Hebbar\\
@@ -191,7 +190,7 @@
 	 %{\normalsize \bf {guide-name}}\\
 	 %{\normalsize \bf {designation}}\\
 	%\vspace{2cm}
-	\vspace{.3cm}
+	\vspace{1.5cm}
 	\begin{figure}[ht] 
 	{\centering {\includegraphics[scale=.4]{manipal.jpg}}\par}
 	\end{figure}
@@ -213,25 +212,27 @@
 	\begin{Large}
 		 \Large \bf {CERTIFICATE\\}
 	\end{Large}
+	\vspace*{.3cm}
 	
 	This is to certify that this thesis work titled\\
 	{\bf \MakeTextUppercase \projecttitle \\}
 	Is a bonafide record of the work done by \\
 	
+	\vspace*{.3cm}
 	\rm
 	%{\bf \MakeTextUppercase \projectauthors \\}
 	{\bf  \projectauthors \\}
+	{\rollno \\}
 	}
-	%\vspace*{0.5cm}
+	\vspace*{.3cm}
 %	{ \linespread{1} Of the Third Semester, Emebedded Systems in partial fulfillment of the requirement for the award of the Degree of Master of Sciences and Technology in Embedded Systems under the Manipal University in the year 2015 \\}
-%	\vspace*{.2 cm}\\
 	\noindent
 	In partial fulfillment of the requirements for the award of the degree of {\bf Master of
 	Science in Technology - M.Sc. Tech (Branch of M.Sc. Tech Program)} under
 	Manipal University, Manipal and the same has not been submitted elsewhere for
 	the award of any other degree.
 
-	\vspace{1cm}
+	\vspace{2cm}
 
 	\noindent	{\bf External Guide} \hfill {\bf Internal Guide\\}
 	Mr. Satish A Hipparagi \hfill Dr. Harishchandra Hebbar\\
@@ -239,11 +240,11 @@
 	Intel Corp. \hfill SOIS\\
 	Bengaluru \hfill Manipal University, Manipal \\
 	
-	{\centering Director,\\}
+	\vspace{2cm}
+	
+	{\centering \bf Director\\}
 	{\centering School of Information Science\\}
 }
-
-
 
 
 

@@ -73,7 +73,7 @@
 % for setting up alternative directory paths to graphics files,
 % remember to comment in "graphics" package
 %
-\graphicspath{{./eps/}{./tiff/}{./jpg/}{./fig/}{./dia/}{./gnuplot/}{./png/}}
+\graphicspath{{./pics/}{./tiff/}{./jpg/}{./fig/}{./dia/}{./gnuplot/}{./png/}}
 
 
 %------------

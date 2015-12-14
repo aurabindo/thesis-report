@@ -1,0 +1,9 @@
+
+This directory contains sources for the official report.
+To compile, run make. Only tested on Linux. 
+Make sure you have full latex suite installed. If not,
+install the minimal latex package and then compile to
+see what all packages latex complains as missing and
+then install them individually. You will save a lot of
+space (and downloading time) at the cost of time needed
+to figure out whats missing.

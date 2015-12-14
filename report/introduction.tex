@@ -1,0 +1,90 @@
+
+
+\chapter{Introduction}
+\label{report}
+\paragraph*{•}
+
+\hspace{8mm} 
+
+\noindent Mobile devices are the one of the most competitive consumer technology equipment market.
+Manufacturers come up with improved or advanced versions of their product quite sooner that
+people expect. With the demand from the market for more of performance, features, battery
+life, etc the need to optimizing existing products also arise. Hence optimization of boot time
+for Android devices are quite relevant.
+
+We will look into the overview of Android booting sequence from all levels. Then we will look
+deeply into available tools to evaluate the boot time. Various profiling tools which help understand
+the booting process in detail will also be covered in detail. Finally we will look at the techniques
+and procedures which will help in reducing the boot time. The optimizing effort will be focused on the
+linux kernel and bootloader.
+
+\section{About Android}
+
+Android is an open source mobile OS currently developed by Google, based on the Linux kernel and designed
+primarily for touchscreen mobile devices such as smartphones and tablets. Initially developed
+by Android, Inc., which Google bought in 2005. Android was unveiled in 2007, along with the
+founding of the Open Handset Alliance – a consortium of hardware, software, and telecommunication
+companies devoted to advancing open standards for mobile devices. However, most Android devices
+ultimately ship with a combination of open source and proprietary software, including proprietary
+software required for accessing Google services.
+
+
+Linux kernel is the core part of the Android OS. The version of the linux kernel used in Android is
+based on one of the Linux kernel's LTS branches. Android's variant of the Linux kernel has further
+architectural changes that are implemented by Google outside the typical Linux kernel development
+cycle, such as the inclusion of components like Binder, ashmem, pmem, logger, wakelocks,
+and different out-of-memory (OOM) handling.
+
+\subsection {Hardware}
+
+The main hardware platform for Android is the ARM architecture (ARMv7 and ARMv8-A architectures),
+with x86 and MIPS architectures also officially supported in later versions of Android.
+Since Android 5.0 "Lollipop", 64-bit variants of all platforms are supported in
+addition to the 32-bit variants.
+
+Intel has its processors specifically made for low power devices, which run Android.
+This architecture is known as Intel Atom. It is a SoC which offers good performance with
+reduced power consumption compared to a full fledged desktop processors known under
+the series Intel Core.
+
+\subsection{Software Stack}
+
+On top of the Linux kernel, there are the middleware, libraries and APIs written in C,
+and application software running on an application framework which includes
+Java-compatible libraries based on Apache Harmony. Development of the Linux kernel
+continues independently of other Android's source code bases.
+
+\begin{figure}[h]
+  \centering
+    \centering
+    \includegraphics[scale=0.6]{android_arch.png}
+    \caption{Android Software Architecture}
+    \label{fig:android_arch}
+\end{figure}
+
+%\begin{figure}[h!]
+%  \centering
+%    	\includegraphics[scale=0.5]{scada_architecture.png}
+%	\caption{Architecure of a typical power SCADA system}
+%	\label{scada_arch} %the label was cycle here
+
+
+
+%\begin{figure}[h]
+%  \centering
+%  \begin{subfigure}[b]{1\textwidth}
+%    \centering
+%    \includegraphics[scale=0.4]{digraph_simple.png}
+%    \caption{relation digraph of the simplified system}
+%    \label{fig:digraph_simple}
+%  \end{subfigure}
+  
+%  \begin{subfigure}[b]{1\textwidth}
+%    \centering
+%    \includegraphics[scale=0.4]{digraph_virtual.png}
+%    \caption{Representation of the digraph with virtual nodes}
+%    \label{fig:digraph_virtual}
+%  \end{subfigure}
+  
+%\end{figure}
+

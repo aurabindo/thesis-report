@@ -1,0 +1,167 @@
+%   Copyright (C) 2014  School of Information Sciences, Manipal
+
+
+
+\newcommand{\projecttitle}{Boot-Time Optimization for Android on Intel Atom Architecture}
+\newcommand{\projectauthors}{\normalsize Aurabindo J}
+\newcommand{\institutename}{School of Information Sciences}
+\newcommand{\university}{Manipal University, Manipal}
+\newcommand{\rollno}{141021001}
+\documentclass{mainreport}
+%\linespread{1.5}
+\usepackage{hyperref}
+\usepackage{makeidx}
+\usepackage{multirow}
+\usepackage{nomencl}
+\usepackage{pdfpages}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{upquote}
+\usepackage{relsize}
+\usepackage{fancyvrb}
+%\usepackage{biblatex}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+%\usepackage{tocloft}
+
+
+\newcommand{\tab}{\hspace*{2em}}
+% for removing dots
+
+\makeatletter
+\renewcommand{\@dotsep}{10000} 
+\makeatother
+
+\renewcommand{\figurename}{Fig.}
+
+
+\begin{document}
+
+\maketitle
+\makecertificate
+
+\parindent 10mm
+%\newgeometry{bottom=2.5cm,top=2.5cm}
+\chapter*{Acknowledgment}\label{ack}\addcontentsline{toc}{chapter}{Acknowledgment}
+{\label{ack} 
+
+%\paragraph*{•}
+\hspace{6mm} This project itself is an acknowledgment to the inspiration, drive and technical
+assistance contributed by many individuals. I would like to express my heartfelt thanks to my project guides 
+{\bf Dr. Harishchandra Hebbar} and {\bf Dr. Nandish Rao}
+%\paragraph*{•}
+I would like to thank all the teaching and non teaching faculties of {\bf School of Information Sciences}, 
+in particular, for providing us with an ample environment and
+infrastructure required to carry out this project. 
+
+This project would not be possible without the support from {\bf Intel India}. I thank \
+{\bf Mr. Satish A Hipparagi}, and {\bf Mr. Abhilash K.V.}, engineers at Intel,
+for the inspiration and support rendered.
+
+%\paragraph*{•}
+I extend my heartfelt thanks to my parents, friends and well wishers for their 
+support and timely help. Above all I thank the Almighty for His blessing and 
+providing mercies at all stages of my work. \\[2cm]
+
+
+
+
+\noindent Manipal \hfill Project Members
+
+\noindent \today \hfill \institutename
+
+ \hfill Manipal
+
+
+
+
+
+}
+
+\chapter*{Abstract}\label{Abstract}\addcontentsline{toc}{chapter}{Abstract}
+
+{
+\label{Abstract}
+
+
+
+%\paragraph*{•}
+\hspace{6mm} When Android framework was getting developed, systems using ARM core and
+corresponding sub system architecture were widely used. As the ARM ecosystem evolved,
+it established itself as one of the leading vehicle for Android platform. Consequently,
+Android ecosystem also developed around ARM architecture including application
+development, services and even system level optimization. When x86 core also entered
+this Android ecosystem, effort was put in to make system level optimization for
+Android products based on x86 Architecture.
+
+This thesis aims at evaluating various known methods as well as finding new areas
+for optimization. Optimization effort will be targeting at reducing the boot time of
+the the system by evaluating various components which includes BIOS firmware,
+Bootloader, Linux Kernel and other AOSP components.
+%\end{center}
+}
+
+%generate table of contents
+\tableofcontents
+
+%\chapter*{List of Symbols}\label{symbol}\addcontentsline{toc}{chapter}{List of Symbols}
+%\listofsymbols
+
+%\input{symbol}
+
+%\input{fig}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+%\listoftables
+\addtocontents{lof}{\textbf{No.}\hspace{8 mm}\textbf{Figure}~\hfill\textbf{Page}\par}
+%\newpage
+
+
+\chapter*{List of Abbreviations}\label{abbrv}\addcontentsline{toc}{chapter}{List of Abbreviations}
+
+\input{abbreviation}
+
+%\chapter*{Report}\label{report}\addcontentsline{toc}{chapter}{Report}
+
+\pagenumbering{arabic}
+
+\input{introduction}
+\input{boot}
+\input{profiling}
+\input{todo}
+\input{conclusion}
+
+%\chapter*{Datasheets}\label{datasheet}\addcontentsline{toc}{chapter}{Datasheets}
+
+%{\label{nexys3}\includepdf[pages={-}]{Nexys3_rm.pdf} 
+%{\label{nexys3}\includepdf[pages={1-1,8-10,11-14,18-20}]{Nexys3_rm.pdf} 
+%{\label{nexys3}\includepdf[pages={1-1}]{spartan6.pdf} 
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{master}
+
+\end{document}

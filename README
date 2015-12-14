@@ -1,14 +1,21 @@
 
 Thesis report for MSc. Tech degree from School of Information Science, Manipal University
 
+#Dependencies
+
+Evince Full Latex suite, if you are on a fast internet. Else see report/README
+
 #Usage
 
-Install latex suite and run:
+Install latex suite, and run:
 
 ```
 make
 ```
-This will compile the latex source, create PDF output and open the resulting file in evince document viewer.
+This will compile the latex source for both the report and presentation
+and create a PDF output. It will also open the resulting file
+in evince document viewer.
+
 To clean:
 
 ```

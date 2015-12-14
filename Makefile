@@ -1,11 +1,15 @@
-SOURCE = master
+DIRS = report presentation
+BUILD_DIRS = $(DIRS:%=build-%)
+CLEAN_DIRS = $(DIRS:%=clean-%)
 
-all:
-	pdflatex $(SOURCE).tex
-	bibtex $(SOURCE)
-	pdflatex $(SOURCE).tex
-	pdflatex $(SOURCE).tex
-	evince $(SOURCE).pdf &
+all:	$(BUILD_DIRS)
 
-clean:
-	rm -rf $(SOURCE){.aux,.lof,.log,.lot,.nlo,.out,.pdf,.toc,.bbl,.blg}
+$(BUILD_DIRS):
+	$(MAKE) -C $(@:build-%=%)
+
+clean:	$(CLEAN_DIRS)
+
+$(CLEAN_DIRS):
+	$(MAKE) -C $(@:clean-%=%) clean
+
+.PHONY: $(DIRS) $(BUILD_DIRS) $(CLEAN_DIRS) clean all

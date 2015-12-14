@@ -4,12 +4,15 @@ CLEAN_DIRS = $(DIRS:%=clean-%)
 
 all:	$(BUILD_DIRS)
 
+$(DIRS):
+	@$(MAKE) -sC $@
+
 $(BUILD_DIRS):
-	$(MAKE) -C $(@:build-%=%)
+	@$(MAKE) -sC $(@:build-%=%)
 
 clean:	$(CLEAN_DIRS)
 
 $(CLEAN_DIRS):
-	$(MAKE) -C $(@:clean-%=%) clean
+	@$(MAKE) -sC $(@:clean-%=%) clean
 
 .PHONY: $(DIRS) $(BUILD_DIRS) $(CLEAN_DIRS) clean all

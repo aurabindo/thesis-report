@@ -1,8 +1,8 @@
 
 
-\chapter{Profiling Tools and Techniques}
+\section{Profiling Tools and Techniques}
 \label{prof_tools_techniques}
-\paragraph*{•}
+
 
 \hspace{8mm} 
 
@@ -16,7 +16,7 @@ For boot optimization, we need to find out what operation/component took more
 time to complete. For this purpose, a variety of software exists. Elinux.org
 has a listing of various \href{http://elinux.org/Boot_Time}{tools and techniques}.
 
-\section{Bootchart}
+\subsection{Bootchart}
 
 Bootchart is a tool for performance analysis and visualization of the
 GNU/Linux boot process. Resource utilization and process information are collected
@@ -37,7 +37,7 @@ Bootchart is more suitable to track down userspace.
 
 \clearpage
 
-\section{Bootloader Timestamps}
+\subsection{Bootloader Timestamps}
 
 Inorder to optimize bootloader, we need to know what operation done by the
 bootloader take much of time slice. Even in the debug image, timestamps
@@ -61,7 +61,7 @@ other ways to get the timestamp:
 		sample output of the raw cycles read from RDTSC.	
 \end{enumerate}
 
-\begin{Verbatim}[fontsize=\small]
+\begin{verbatim}[fontsize=\small]
 4386708900 kernelflinger-02.19-userdebug
 4392989550 eMMC storage identified
 4397947812 Setting PCI boot device to: Pci(0x10,0x0)/Ctrl(0)/HD
@@ -79,7 +79,7 @@ other ways to get the timestamp:
 [    0.049605] ENERGY_PERF_BIAS: View and update with x86_energy_perf_policy(8)
 [    0.856330] uart(1) device(INT33A2) wake_src(2) idle(40)
 [    0.863966] hpet: number irqs doesn't agree with number of timers
-\end{Verbatim}
+\end{verbatim}
 
 The more than the ticks, it will make more sense if the value is in the unit of time.
 For this, we need to get the TSC clock frequency and calcuate the time corresponding
@@ -89,7 +89,7 @@ of the TSC clock frequency. Using this value, we can easily calculate the actual
 rather than clock ticks since reset. The below output shows the log from the same
 device, showing the time in microseconds since reset:
 
-\begin{Verbatim}[fontsize=\small]
+\begin{verbatim}[fontsize=\small]
 kernelflinger-02.19-userdebug
 3298 eMMC storage identified
 6045 Setting PCI boot device to: Pci(0x10,0x0)/Ctrl(0)/
@@ -113,13 +113,13 @@ kernelflinger-02.19-userdebug
 [    0.049633] ENERGY_PERF_BIAS: Set to 'normal', was 'performance'
 [    0.049633] ENERGY_PERF_BIAS: View and update with x86_energy_perf_policy(8)
 [    0.878356] uart(1) device(INT33A2) wake_src(2) idle(40)
-\end{Verbatim}
+\end{verbatim}
 
 As we see, the bootloader does its job in 991.2 milliseconds.
 Much of its time is spent in tasks which require service from the
 firmware, which is outside of the bootloader to control.
 
-\section {Initcall Debug}
+\subsection {Initcall Debug}
 
 This is a method to indentify the timings for the init call completions
 of the various kernel drivers. This is invoked by changing the kernel
@@ -132,13 +132,13 @@ to the correspoding \texttt{BoardConfig.mk} will add it to the default
 kernel command line.
 
 Running dmesg will give the log. To get a sorted list, we can use:
-\begin{Verbatim}[fontsize=\small]
+\begin{verbatim}[fontsize=\small]
 dmesg -s 128000 | grep ``initcall'' | sed ``s/\(.\)after\(.\)/\2 \1/g'' | sort -n -r
-\end{Verbatim}
+\end{verbatim}
 
 A sample output of this command in decreasing order of time take to complete would be:
 
-\begin{Verbatim}[fontsize=\small]
+\begin{verbatim}[fontsize=\small]
 322342 usecs <7>[    1.230001] initcall i915_init+0x0/0x74 returned 0
 254394 usecs <7>[    4.872194] initcall ov8858_init_mod+0x0/0x1000 [ov8858_driver] returned 0
 220703 usecs <7>[    0.455998] initcall acpi_init+0x0/0x25e returned 0
@@ -149,7 +149,7 @@ A sample output of this command in decreasing order of time take to complete wou
 133379 usecs <7>[    5.121348] initcall init_lm3554+0x0/0x1000 [lm3554] returned 0
 113899 usecs <7>[    1.890387] initcall intel_pram_init+0x0/0x1d3 returned 0
 92015 usecs <7>[    4.975765] initcall init_ov2722+0x0/0x20 [ov2722] returned 0
-\end{Verbatim}
+\end{verbatim}
 
 \subsection{Total Boot Time}
 

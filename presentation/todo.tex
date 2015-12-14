@@ -1,8 +1,8 @@
 
 
-\chapter{Future Work}
+\section{Future Work}
 \label{fut_work}
-\paragraph*{•}
+
 
 \hspace{8mm} 
 
@@ -15,11 +15,11 @@ Unfortunately it is not very straightforward to profile device drivers that are 
 since their initialization takes place when there is no userspace ready. Hence we cannot use the normal
 tools to trigger profiling. However, the system can be configured to starting tracing at the boot itself.
 
-\section{Discrete Optimizations}
+\subsection{Discrete Optimizations}
 
 Some other optimization strategies that could be done are summarized below:
 
-\subsection{Right CPU Frequency}
+\subsubsection{Right CPU Frequency}
 
 In some systems, the power consumed by the display is very high compared to
 the rest of the system. Depending on the BOM, the hardware limitation in peak
@@ -31,15 +31,15 @@ reduce power consumption. However, not all platforms might need such a capping.
 Increasing the CPU clock frequency to a high value during early boot is a sane
 way to improve the boot times. This can be achieved by using a simple
 init.rc script:
-\begin{Verbatim}
+\begin{verbatim}
 on early-init
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1050000
 write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1050000
 write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1050000
 write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1050000
-\end{Verbatim}
+\end{verbatim}
 
-\subsection{Enabling DMA}
+\subsubsection{Enabling DMA}
 
 Direct Memory Access is a technique to increase the data
 transfer throughput such that CPU doest not interfere in the process
@@ -52,7 +52,7 @@ is copying the vital components like kernel itself, since in most
 cases, every other jobs will be blocked or dependent on the kernel
 itslef.
 
-\subsection{Read Ahead}
+\subsubsection{Read Ahead}
 
 It is observed that a lot of time is spent waiting for I/O
 when the system is booting. Read Ahead addresses this issue.
@@ -64,7 +64,7 @@ run during every boot and check what files init is trying to access.
 The daemon should adapt its fetching process to reflect the
 system requirements.
 
-\subsection{Group Writes}
+\subsubsection{Group Writes}
 
 Writes take longer than to read. This technique involves
 grouping random writes. When a write operation is encountered,
@@ -77,7 +77,7 @@ might fill the threshold of 10 kB required to trigger an actual write
 operation. This feature is also provided by files systems. However,
 drivers also provide such a feature known as ``packed commands''
 
-\subsection{File System}
+\subsubsection{File System}
 
 Various software level optimizations can be done to make I/O
 faster, which will inturn make the booting operation faster.

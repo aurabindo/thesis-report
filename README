@@ -1,13 +1,22 @@
+MSc. Tech degree from School of Information Science, Manipal University
+               Thesis report and presentation template
+=======================================================================
 
-Thesis report for MSc. Tech degree from School of Information Science, Manipal University
+Author: Aurabindo J <mail@aurabindo.in>
+
+=======================================================================
 
 #Dependencies
 
-Evince Full Latex suite, if you are on a fast internet. Else see report/README
+
+This will only work on a linux based OS like Fedora/Ubuntu/Arch, etc.
+
+If you are on a faster internet connection, install the full latex suite.
+Else see report/README.
 
 #Usage
 
-Install latex suite, and run:
+To compile both report and the presentation, run (in this directory):
 
 ```
 make
@@ -15,6 +24,18 @@ make
 This will compile the latex source for both the report and presentation
 and create a PDF output. It will also open the resulting file
 in evince document viewer.
+
+To individially compile either the report or the presentation alone,
+you can use as the target. For example:
+
+```
+make report
+```
+or
+```
+make presentation
+```
+No need to type in `presentation` fully. You can use tab completion.
 
 To clean:
 

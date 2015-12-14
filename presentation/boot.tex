@@ -1,8 +1,8 @@
 
 
-\chapter{Android Boot Sequence}
+\section{Android Boot Sequence}
 \label{android_boot}
-\paragraph*{•}
+
 
 \hspace{8mm} 
 
@@ -27,7 +27,7 @@ The diagram below shows the boot flow in Android:
 \end{figure}
 
 \clearpage
-\section{Bootloader}
+\subsection{Bootloader}
 
 Up on power up, the SoC firmware boots from a ROM area typically located internally,
 different from the system's eMMC card. This is what we loosely call BIOS, for legacy
@@ -36,7 +36,7 @@ The boot loader can be used to initialize the DRAM and load another level of loa
 or directly the Linux kernel. On Cherrytrail Platform, the bootloader is called Kernelflinger.
 It then loads the Linux Kernel with the required parameters hardcoded in the boot image.
 
-\section{Kernel}
+\subsection{Kernel}
 
 Linux kernel is the heart of the Android responsible for the process creation, inter process communication, device drivers, file system management etc. Android applies a custom patch on the main stream kernel to support certain features like Wake locks etc needed for operation of the Android.
 
@@ -45,11 +45,11 @@ does the driver initializations, mounts the root file system (typically passed
 as kernel command line arguments) and starts the first application in user space.
 
 
-\section{Android}
+\subsection{Android}
 
 Android typically operates wholly on the user space. The android applications are executed over a Virtual Machine called the Dalvik. The following section explains the internals in detail.
 
-\subsection{init and init.rc}
+\subsubsection{init and init.rc}
 
 The first user space application executed on booting the kernel is the init
 executable located in the root folder. The process parses a start up script
@@ -59,20 +59,20 @@ for a proper operation of android. It offers various types of execution timings
 such as early-init, on-boot, on-post-fs etc. A detailed explanation of the
 scripting model is available on Android documentation site.
 
-\subsection{Demons and Services}
+\subsubsection{Demons and Services}
 
 The init process creates various daemons and processes like rild, vold,
 mediaserver, adb, etc each responsible for its own functionality.
 Descriptions of these processes are not in the scope of this post.
 Rather we will discuss more about \textit{Zygote} process.
 
-\subsection{Service Manager}
+\subsubsection{Service Manager}
 
 The service manager process manages all the services running in the system.
 Every service created registers itself with this process and this information
 is used for future references by other processes/applications.
 
-\subsection{Zygote}
+\subsubsection{Zygote}
 
 Zygote is one of the first init process created on boot. The term ``zygote`` is based the biological ''initial cell formed
 that divides to produce offsprings``. Similarly zygote in android initializes the Dalivik VM and

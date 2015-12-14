@@ -7,3 +7,7 @@ see what all packages latex complains as missing and
 then install them individually. You will save a lot of
 space (and downloading time) at the cost of time needed
 to figure out whats missing.
+
+Installing packages in Linux is quite easy if you 
+use OS's package managerlike apt for ubuntu or  
+dnf for fedora.

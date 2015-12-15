@@ -2,6 +2,8 @@ DIRS = report presentation
 BUILD_DIRS = $(DIRS:%=build-%)
 CLEAN_DIRS = $(DIRS:%=clean-%)
 
+export TOP_DIR = $(shell pwd)
+
 all:	$(BUILD_DIRS)
 
 $(DIRS):

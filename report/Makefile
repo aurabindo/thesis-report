@@ -1,6 +1,6 @@
-SOURCE = master
-LTX = pdflatex
-LTX_FLAGS = -halt-on-error
+include $(TOP_DIR)/defs.mk
+
+SOURCE := master
 
 all:
 	@echo -n 'Compiling your report.'
@@ -15,5 +15,5 @@ all:
 	@echo 'Your report is report/$(SOURCE).pdf'
 	@evince $(SOURCE).pdf & > /dev/null 2>&1
 clean:
-	@rm -rf $(SOURCE){.aux,.lof,.log,.lot,.nlo,.out,.pdf,.toc,.bbl,.blg}
+	@rm -rf *{.aux,.lof,.log,.lot,.nlo,.out,.pdf,.toc,.bbl,.blg}
 	@echo 'Report cleaned.'

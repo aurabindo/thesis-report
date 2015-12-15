@@ -1,6 +1,6 @@
-SOURCE = master
-LTX = pdflatex
-LTX_FLAGS = -halt-on-error
+include $(TOP_DIR)/defs.mk
+
+SOURCE := master
 
 all:
 	@echo -n 'Compiling your presentation.'
@@ -16,5 +16,5 @@ all:
 	@evince $(SOURCE).pdf & > /dev/null 2>&1
 
 clean:
-	@rm -rf $(SOURCE){.aux,.lof,.log,.lot,.nlo,.out,.pdf,.toc,.bbl,.blg,.snm,.nav,.vrb}
+	@rm -rf *{.aux,.lof,.log,.lot,.nlo,.out,.pdf,.toc,.bbl,.blg,.snm,.nav,.vrb}
 	@echo 'Presentation cleaned.'

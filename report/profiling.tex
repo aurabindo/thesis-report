@@ -6,14 +6,12 @@
 
 \hspace{8mm} 
 
-\noindent To profiling tools are a broad category of software designed to optimize other
-software. Performance optimizing softwares like Intel VTune are used for getting
-greater efficiency out of the software, by finding out the hot-spots in the
-software which are frequently executed. These components are identified and
-optimized by the author manually in most cases.
+\noindent To measure the boot time of a platform, there exists a wide
+variety of profiling tools and techniques which will be covered in
+this section.
 
-For boot optimization, we need to find out what operation/component took more
-time to complete. For this purpose, a variety of software exists. Elinux.org
+For optimizing the boot time in linux, we need to find out what operation/component took more
+time to complete. For this purpose, some well known techniques are available. Elinux.org
 has a listing of various \href{http://elinux.org/Boot_Time}{tools and techniques}.
 
 \section{Bootchart}
@@ -49,13 +47,13 @@ other ways to get the timestamp:
 \begin{enumerate}
 	\item \textbf{Using UEFI GetTime() function} :
 		This is a UEFI Runtime service, and the time is obtained from the CMOS RTC.
-		Even though the UEFI supports high accuracy, the CMOS RTC doesnt not support
+		Even though the UEFI supports high accuracy, the CMOS RTC does not support
 		resolution lower than 1 second. Hence this method is not suitable.
 	\item \textbf{Using Host-side serial timestamp} :
 		This method is not an accurate way for getting timestamp.
 		However, a resolution of 10 - 50 ms may be obtained.
 	\item \textbf{Using RDTSC instruction} :
-		Intel architecure from Pentium onwards has the RDTSC instruction
+		Intel architecture from Pentium onwards has the RDTSC instruction
 		which returns the number of cycles elapsed since reset. This is so
 		far the most accurate way of measuring a timestamp. Below is a
 		sample output of the raw cycles read from RDTSC.	
@@ -82,9 +80,9 @@ other ways to get the timestamp:
 \end{Verbatim}
 
 The more than the ticks, it will make more sense if the value is in the unit of time.
-For this, we need to get the TSC clock frequency and calcuate the time corresponding
+For this, we need to get the TSC clock frequency and calculate the time corresponding
 to each of the values. This can be done using an instruction RDMSR. Using this
-instruction we can read a specific Model Specific Regsiter which will contain the value
+instruction we can read a specific Model Specific Register which will contain the value
 of the TSC clock frequency. Using this value, we can easily calculate the actual time
 rather than clock ticks since reset. The below output shows the log from the same
 device, showing the time in microseconds since reset:
@@ -121,14 +119,14 @@ firmware, which is outside of the bootloader to control.
 
 \section {Initcall Debug}
 
-This is a method to indentify the timings for the init call completions
+This is a method to identify the timings for the init call completions
 of the various kernel drivers. This is invoked by changing the kernel
 parameters. Simple adding \texttt{initcall\_debug} to the corresponding
 BoardConfig.mk would make this change. For achieving this, we need
 to make some changes to some scripts, which is a way Intel deals with
-multiple configuration for different produts they need to support from
+multiple configuration for different products they need to support from
 the same codebase. Adding \texttt{BOARD\_KERNEL\_CMDLINE += initcall\_debug}
-to the correspoding \texttt{BoardConfig.mk} will add it to the default
+to the corresponding \texttt{BoardConfig.mk} will add it to the default
 kernel command line.
 
 Running dmesg will give the log. To get a sorted list, we can use:
@@ -138,7 +136,7 @@ dmesg -s 128000 | grep ``initcall'' | sed ``s/\(.\)after\(.\)/\2 \1/g'' | sort -
 
 A sample output of this command in decreasing order of time take to complete would be:
 
-\begin{Verbatim}[fontsize=\small]
+\begin{Verbatim}[fontsize=\smaller]
 322342 usecs <7>[    1.230001] initcall i915_init+0x0/0x74 returned 0
 254394 usecs <7>[    4.872194] initcall ov8858_init_mod+0x0/0x1000 [ov8858_driver] returned 0
 220703 usecs <7>[    0.455998] initcall acpi_init+0x0/0x25e returned 0

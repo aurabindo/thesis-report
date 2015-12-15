@@ -27,20 +27,25 @@ The diagram below shows the boot flow in Android:
 \end{figure}
 
 \clearpage
-\section{Bootloader}
+\section{BIOS and Bootloader}
 
-Up on power up, the SoC firmware boots from a ROM area typically located internally,
-different from the system's eMMC card. This is what we loosely call BIOS, for legacy
-reasons. This code determines the boot media and loads the boot loader from the media.
-The boot loader can be used to initialize the DRAM and load another level of loader
-or directly the Linux kernel. On Cherrytrail Platform, the bootloader is called Kernelflinger.
-It then loads the Linux Kernel with the required parameters hardcoded in the boot image.
+When the user presses the power button, the SoC firmware boots from a ROM (SPI NOR)
+area which is different from the system's eMMC card. A part of the system
+firmware is also stored in eMMC card as well. This firmware is what we
+loosely call BIOS, for legacy reasons. The system firmware initializes
+the DRAM, along with other peripherals and loads another
+level of loader or directly the Linux kernel. It then loads the Linux Kernel
+with the required parameters hardcoded in the boot image.
 
 \section{Kernel}
 
-Linux kernel is the heart of the Android responsible for the process creation, inter process communication, device drivers, file system management etc. Android applies a custom patch on the main stream kernel to support certain features like Wake locks etc needed for operation of the Android.
+Linux kernel is the heart of the Android responsible for the process
+creation, inter process communication, device drivers, file system
+management etc. Android applies a custom patch on the main stream
+kernel to support certain features like Wake locks etc needed for
+operation of the Android.
 
-The kernel is loaded as a compressed imaege. Up on loading, it decompresses itself,
+The kernel is loaded as a compressed image. Up on loading, it decompresses itself,
 does the driver initializations, mounts the root file system (typically passed 
 as kernel command line arguments) and starts the first application in user space.
 
@@ -81,22 +86,3 @@ across the VM instances resulting in a low memory foot print and short load time
 
 Zygote apart from installing a listener on the server socket, also preloads classes and
 resources to be used later in the Android applications. Once done, the system server is started.
-
-%nbegin{figure}[h]
-%  \centering
-%  \begin{subfigure}[b]{1\textwidth}
-%    \centering
-%    \includegraphics[scale=0.4]{digraph_simple.png}
-%    \caption{Relation digraph of the simplified system}
-%    \label{fig:digraph_simple}
-%  \end{subfigure}
-  
-%  \begin{subfigure}[b]{1\textwidth}
-%    \centering
-%    \includegraphics[scale=0.4]{digraph_virtual.png}
-%    \caption{Representation of the digraph with virtual nodes}
-%    \label{fig:digraph_virtual}
-%  \end{subfigure}
-  
-%\end{figure}
-

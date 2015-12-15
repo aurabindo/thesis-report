@@ -16,5 +16,5 @@ all:
 	@evince $(SOURCE).pdf & > /dev/null 2>&1
 
 clean:
-	@rm -rf $(SOURCE){.aux,.lof,.log,.lot,.nlo,.out,.pdf,.toc,.bbl,.blg,.snm,.nav}
+	@rm -rf $(SOURCE){.aux,.lof,.log,.lot,.nlo,.out,.pdf,.toc,.bbl,.blg,.snm,.nav,.vrb}
 	@echo 'Presentation cleaned.'

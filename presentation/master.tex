@@ -10,6 +10,11 @@
 
 \usepackage{booktabs}
 \usepackage{hyperref}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{changepage}
+\usepackage{textpos}
+
 \newcommand{\tab}{\hspace*{2em}}
 % for removing dots
 
@@ -39,35 +44,27 @@
 
 \begin{frame}
 	\frametitle{Abstract}
+	\begin{itemize}
+		\item Android was built around ARM platform.
+		\item Opportunity for optimization on x86
+	\end{itemize}
 
-%
-\hspace{6mm} When Android framework was getting developed, systems using ARM core and
-corresponding sub system architecture were widely used. As the ARM ecosystem evolved,
-it established itself as one of the leading vehicle for Android platform. Consequently,
-Android ecosystem also developed around ARM architecture including application
-development, services and even system level optimization. When x86 core also entered
-this Android ecosystem, effort was put in to make system level optimization for
-Android products based on x86 Architecture.
-
-This thesis aims at evaluating various known methods as well as finding new areas
-for optimization. Optimization effort will be targeting at reducing the boot time of
-the the system by evaluating various components which includes BIOS firmware,
-Bootloader, Linux Kernel and other AOSP components.
-%\end{center}
 \end{frame}
-
 
 
 \input{introduction}
 \input{boot}
 \input{profiling}
 \input{todo}
-\input{conclusion}
 
+\section{Bibliography}
 \begin{frame}
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{master}
+	\frametitle{Bibliography}
+	\nocite{*}
+	\bibliographystyle{plain}
+	\bibliography{master}
+	\vspace{0.2cm}
+	{\Huge{\centerline{Questions ?}}}
 \end{frame}
-
 \end{document}
+

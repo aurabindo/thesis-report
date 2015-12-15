@@ -2,118 +2,40 @@
 
 \section{Future Work}
 \label{fut_work}
-
-
-\hspace{8mm} 
-
-\noindent There are advanced tools to profile kernel drivers so as to know
-where most of the time is being spent by the drivers. There are other numerous
-optimizations possible in the kernel space as well as userspace.
-All such discreete measurements are to be conducted.
-
-Unfortunately it is not very straightforward to profile device drivers that are built into the kernel,
-since their initialization takes place when there is no userspace ready. Hence we cannot use the normal
-tools to trigger profiling. However, the system can be configured to starting tracing at the boot itself.
-
 \subsection{Discrete Optimizations}
-
-Some other optimization strategies that could be done are summarized below:
-
-\subsubsection{Right CPU Frequency}
-
-In some systems, the power consumed by the display is very high compared to
-the rest of the system. Depending on the BOM, the hardware limitation in peak
-current can vary. During boot time, inorded to reduce power consumption,
-the CPU governor, the component which controls the frequency of the CPU
-cores are sometimes not running at their full speed. This certainly helps
-reduce power consumption. However, not all platforms might need such a capping.
-
-Increasing the CPU clock frequency to a high value during early boot is a sane
-way to improve the boot times. This can be achieved by using a simple
-init.rc script:
-\begin{verbatim}
+\begin{frame}[fragile]
+	\frametitle{Right CPU Frequency}
+A service definition for setting frequency:
+	\begin{adjustwidth}{-2em}{-2em}
+\begin{Verbatim}[fontsize=\small]
 on early-init
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1050000
 write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1050000
 write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1050000
 write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1050000
-\end{verbatim}
+\end{Verbatim}
+	\end{adjustwidth}
+\end{frame}
 
-\subsubsection{Enabling DMA}
+\begin{frame}
+	\frametitle{File system option}
+	Options to apply during mounting an ext4 partition:
+	\begin{itemize}
+		\item \texttt{commit} \pause
+		\item \texttt{noatime,nodiratime} \pause
+		\item \texttt{date=writeback} \pause
+		\item \texttt{dioread\_nolock} \pause
+	\end{itemize}
+\end{frame}
 
-Direct Memory Access is a technique to increase the data
-transfer throughput such that CPU doest not interfere in the process
-When we are using an application on top a kernel, copy or move operations
-shall be backed by DMA and this is controlled by the kernel. 
-However, when using low level code, like say, bootloader, the copy function
-may not necessarily be optimized to use DMA for various data transfer
-operations. This is significantly improve boot time when the system
-is copying the vital components like kernel itself, since in most
-cases, every other jobs will be blocked or dependent on the kernel
-itslef.
+\subsubsection{Other Techniques}
 
-\subsubsection{Read Ahead}
-
-It is observed that a lot of time is spent waiting for I/O
-when the system is booting. Read Ahead addresses this issue.
-Read ahead is a technique in which commonly used files are
-fetched early when the processor is busy doing computational job
-which does not require the bus access. Hence the idle bus is
-exploited. In an ideal read ahead implementation, a daemon should
-run during every boot and check what files init is trying to access.
-The daemon should adapt its fetching process to reflect the
-system requirements.
-
-\subsubsection{Group Writes}
-
-Writes take longer than to read. This technique involves
-grouping random writes. When a write operation is encountered,
-it is not immediately executed. The system will wait for few more
-writes until a threshold is exceeded. This threshold could either
-be time based or size based. For example, all the writes for 100 ms
-will be aggregated and written. That way writes happen every 100 ms
-to the actual disk. For size based threshold, 10 random writes of 1 kB
-might fill the threshold of 10 kB required to trigger an actual write
-operation. This feature is also provided by files systems. However,
-drivers also provide such a feature known as ``packed commands''
-
-\subsubsection{File System}
-
-Various software level optimizations can be done to make I/O
-faster, which will inturn make the booting operation faster.
-These include filesystem level options that can be changed.
-
-Android uses ext4 file system. It offers lot of options to improve
-the speed of I/O operations at the cost of reduced reliability.
-For example, there are some of the options provided by EXT4:
-\begin{itemize}
-	\item \textbf{commit}: ext4 can be told to sync all its data and metadata
-			every 'nrsec' seconds. The default value is 5 seconds.
-			This means that if you lose your power, you will lose
-			as much as the latest 5 seconds of work (your
-			filesystem will not be damaged though, thanks to the
-			journaling).  This default value (or any low value)
-			will hurt performance, but it's good for data-safety.
-			Setting it to 0 will have the same effect as leaving
-			it at the default (5 seconds).
-			Setting it to very large values will improve
-			performance.
-
-	\item \textbf{noatime,nodiratime}: Whenever a file is accessed (read), a
-			timestamp information is also written by default. This can
-			be avoided with these options. nodiratime is the similar option
-			but applies to directories rather than files. With these options
-			enabled, only a write operation will cause the change of timestamp
-			information.
-	\item \textbf{data=writeback}: EXT4 is journalling file system. \textit{data=writeback}
-			disables this feature so that write performance is increased. However,
-			this reduced the reliability and the data will more prone to irrecoverable
-			corruption.
-	\item \textbf{dioread\_nolock}: If the dioread\_nolock option is specified
-			ext4 will allocate uninitialized extent before buffer
-			write and convert the extent to initialized after IO
-			completes. This approach allows ext4 code to avoid
-			using inode mutex, which improves scalability on high
-			speed storages.	
-\end{itemize}
-
+\begin{frame}
+	\frametitle{Other Techniques}
+	\begin{itemize}
+		\item DMA in Pre kernel environment \pause
+		\item Read Ahead \pause
+		\item Group Write \pause
+		\item File system optimizatins \pause
+	\end{itemize}
+\end{frame}

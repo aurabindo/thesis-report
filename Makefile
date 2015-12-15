@@ -4,6 +4,8 @@ CLEAN_DIRS = $(DIRS:%=clean-%)
 
 export TOP_DIR = $(shell pwd)
 
+include $(TOP_DIR)/defs.mk
+
 all:	$(BUILD_DIRS)
 
 $(DIRS):

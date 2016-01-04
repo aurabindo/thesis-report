@@ -45,8 +45,8 @@
 \fancyhf{} 
 \lfoot{\footnotesize{\institutename}} 
 \rfoot{\thepage}
-\lhead{\footnotesize Boot-time Optimization for Android\\ on Intel Atom Architecture}
-\rhead{\footnotesize Aurabindo J}
+\lhead{\footnotesize Your Awesome Big Bang Lengthy \\ Project Title}
+\rhead{\footnotesize \projectauthors}
 %\cfoot{\thepage} 
 \renewcommand{\headrulewidth}{0pt} 
 \renewcommand{\footrulewidth}{0pt} 
@@ -172,17 +172,17 @@
 	\vspace{.3cm}
 	\rm
 	%{\bf \MakeTextUppercase \projectauthors \\}
-	{\bf \normalsize Aurabindo J\\}
-	{\normalsize \#141021003\\}
+	{\bf \normalsize \projectauthors \\}
+	{\normalsize \# \rollno \\}
 	\vspace{.6cm}
 	{\centering Under the guidance of,\\}
 	\vspace{1.5cm}
 
 	\noindent	{\bf External Guide} \hfill {\bf Internal Guide\\}
-	Mr. Satish A Hipparagi \hfill Dr. Harishchandra Hebbar\\
-	{Engineering Manager} \hfill {Director\\}
-	Intel Corp. \hfill SOIS\\
-	Bengaluru \hfill Manipal University, Manipal \\
+	\extguidename \hfill Internal guide\\
+	\extguidedesig \hfill {Designation\\}
+	\extguideorg \hfill SOIS\\
+	\extguideplace \hfill Manipal University, Manipal \\
 
 	%{{Guided By}} \\
 	%\vspace{.5cm}
@@ -222,7 +222,7 @@
 	\rm
 	%{\bf \MakeTextUppercase \projectauthors \\}
 	{\bf  \projectauthors \\}
-	{\rollno \\}
+	{\# \rollno \\}
 	}
 	\vspace*{.3cm}
 %	{ \linespread{1} Of the Third Semester, Emebedded Systems in partial fulfillment of the requirement for the award of the Degree of Master of Sciences and Technology in Embedded Systems under the Manipal University in the year 2015 \\}
@@ -235,10 +235,10 @@
 	\vspace{2cm}
 
 	\noindent	{\bf External Guide} \hfill {\bf Internal Guide\\}
-	Mr. Satish A Hipparagi \hfill Dr. Harishchandra Hebbar\\
-	{Engineering Manager} \hfill {Director\\}
-	Intel Corp. \hfill SOIS\\
-	Bengaluru \hfill Manipal University, Manipal \\
+	\extguidename \hfill Dr. Harishchandra Hebbar\\
+	\extguidedesig \hfill {Director\\}
+	\extguideorg \hfill SOIS\\
+	\extguideplace \hfill Manipal University, Manipal \\
 	
 	\vspace{2cm}
 	

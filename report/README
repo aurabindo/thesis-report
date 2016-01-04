@@ -1,6 +1,3 @@
-
-This directory contains sources for the official report.
-To compile, run make. Only tested on Linux. 
 Make sure you have full latex suite installed. If not,
 install the minimal latex package and then compile to
 see what all packages latex complains as missing and
@@ -8,6 +5,16 @@ then install them individually. You will save a lot of
 space (and downloading time) at the cost of time needed
 to figure out whats missing.
 
+To make it easier, look for the`\usepackage` directives
+inside the source (tex) files and try installing those.
+Most of them should be available in the same name with
+some distro specific suffixes or prefixes.
+
 Installing packages in Linux is quite easy if you 
-use OS's package managerlike apt for ubuntu or  
-dnf for fedora.
+use OS's package manager like apt for ubuntu or  
+dnf for fedora. If you are new to linux, let me
+advice you that the way you have done software
+installation in windows is not the way you do it in linux.
+Always prefer installing application with the system's
+package manager, which is apt for Ubuntu & Debian,
+dnf for Fedora, pacman  for Arch, and so on.

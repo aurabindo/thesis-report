@@ -179,10 +179,10 @@
 	\vspace{1.5cm}
 
 	\noindent	{\bf External Guide} \hfill {\bf Internal Guide\\}
-	\extguidename \hfill Internal guide\\
-	\extguidedesig \hfill {Designation\\}
-	\extguideorg \hfill SOIS\\
-	\extguideplace \hfill Manipal University, Manipal \\
+	\extguidename \hfill \intguidename\\
+	\extguidedesig \hfill \intguidedesig\\
+	\extguideorg \hfill \intguideorg\\
+	\extguideplace \hfill \intguideplace \\
 
 	%{{Guided By}} \\
 	%\vspace{.5cm}
@@ -235,10 +235,10 @@
 	\vspace{2cm}
 
 	\noindent	{\bf External Guide} \hfill {\bf Internal Guide\\}
-	\extguidename \hfill Dr. Harishchandra Hebbar\\
-	\extguidedesig \hfill {Director\\}
-	\extguideorg \hfill SOIS\\
-	\extguideplace \hfill Manipal University, Manipal \\
+	\extguidename \hfill \intguidename\\
+	\extguidedesig \hfill \intguidedesig\\
+	\extguideorg \hfill \intguideorg\\
+	\extguideplace \hfill \intguideplace \\
 	
 	\vspace{2cm}
 	
